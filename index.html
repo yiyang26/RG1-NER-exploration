@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- EDIT: the title shows in the browser tab and in search results -->
-  <title>My Project Title</title>
+  <title>Exploring Named Entity Recognition on <cite>Repertorium Germanicum I</cite></title>
 
   <!-- This loads the styling. You usually don't need to touch it. -->
   <link rel="stylesheet" href="style.css">
@@ -16,20 +16,43 @@
 
   <!-- ===== HEADER: edit the title, the one-line description, and your name ===== -->
   <header>
-    <h1>My Project Title</h1>
-    <p class="subtitle">A one-line description of what this project shows.</p>
-    <p class="byline">Your Name &middot; <span id="year"></span></p>
+     <p class="eyebrow">Measuring Manuscripts · ESU DH 2026</p>
+    <h1>Exploring Named Entity Recognition on <cite>Repertorium Germanicum I</h1>
+    <p class="subtitle"> How do NER models with different linguistic and historical training
+    backgrounds process highly abbreviated Latin regesta?</p>
+    <p class="byline">Yiyang Huang &middot; <span id="year"></span></p>
+    <div class="hero-links">
+      <a class="button button-secondary" href="https://github.com/yiyang26/measuring-manuscripts-project-template">View repository</a>
+    </div>
   </header>
 
   <!-- ===== ABSTRACT: a short paragraph for someone who has never seen this ===== -->
   <section>
     <h2>Abstract</h2>
     <p>
-      Two or three sentences. State the question, what you measured, and the one
-      result the figure below shows.
+      This project explores the use of named entity recognition (NER) on the Latin regesta of <cite>Repertorium Germanicum I</cite>. 
+      These texts differ substantially from the modern, standardized language on which many NER systems are trained: 
+      they are highly compressed, contain frequent abbreviations, and include inflected or Latinized forms of personal 
+      and geographical names.
     </p>
+    <p>
+      This project applies three pretrained NER models to the XML-encoded texts and compares their outputs. Each model represents a different 
+      training contexts: general Latin, medieval documentray Latin, and modern multilingual NER. The aim of this project is not to find the
+      best model, but to investigate how different NER systmes respond to the liguistic and editorial challenges of the historical regesta.
+    </p>  
   </section>
-
+  <!-- ===== Corpus: edit the rows, or replace the whole table ===== -->
+  <section id="corpus">
+    <div class="section-heading">
+      <h2>The Corpus:<cite>Repertorium Germanicum I</cite></h2>
+      <p>
+        A
+      </p>  
+      
+  
+  
+    </div>
+    <
   <!-- ===== FIGURE: replace figure.png with your own image ===== -->
   <section>
     <h2>Result</h2>
