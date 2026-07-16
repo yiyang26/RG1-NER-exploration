@@ -26,41 +26,95 @@
     </div>
   </header>
 
-  <!-- ===== ABSTRACT: a short paragraph for someone who has never seen this ===== -->
-  <section>
-    <h2>Abstract</h2>
-    <p>
-      This project explores the use of named entity recognition (NER) on the Latin regesta of <cite>Repertorium Germanicum I</cite>. 
-      These texts differ substantially from the modern, standardized language on which many NER systems are trained: 
-      they are highly compressed, contain frequent abbreviations, and include inflected or Latinized forms of personal 
-      and geographical names.
-    </p>
-    <p>
-      This project applies three pretrained NER models to the XML-encoded texts and compares their outputs. Each model represents a different 
-      training contexts: general Latin, medieval documentray Latin, and modern multilingual NER. The aim of this project is not to find the
-      best model, but to investigate how different NER systmes respond to the liguistic and editorial challenges of the historical regesta.
-    </p>  
-  </section>
-  <!-- ===== Corpus: edit the rows, or replace the whole table ===== -->
-  <section id="corpus">
-    <div class="section-heading">
-      <h2>The Corpus:<cite>Repertorium Germanicum I</cite></h2>
-      <p>
-        A
-      </p>  
-      
+  <!-- ===== ABSTRACT ===== -->
+<section id="abstract">
+  <h2>Abstract</h2>
+
+  <p>
+    This project explores the use of named entity recognition (NER) on the
+    Latin regesta of <cite>Repertorium Germanicum I</cite>. These texts differ
+    substantially from the modern, standardized language on which many NER
+    systems are trained: they are highly compressed, contain frequent
+    abbreviations, and include inflected or Latinized forms of personal and
+    geographical names.
+  </p>
+
+  <p>
+    This project applies three pretrained NER models to text segments extracted
+    from the XML and compares their outputs. Each model represents a different
+    training context: general Latin, medieval documentary Latin, and modern
+    multilingual NER. The aim is not to identify a definitively “best” model,
+    but to investigate how different NER systems respond to the linguistic and
+    editorial challenges of historical regesta.
+  </p>
+</section>
+
+
+<!-- ===== CORPUS AND DATA PREPARATION ===== -->
+<section id="corpus">
+  <h2>The Corpus</h2>
+
+  <!-- 1. Introduce the corpus -->
+  <h3>Repertorium Germanicum I</h3>
+
+  <p>
+    The <cite>Repertorium Germanicum</cite>, produced by the German Historical
+    Institute in Rome, records people, churches, and places connected with the
+    German-speaking territories of the Holy Roman Empire as they appear in
+    Vatican registers. This project uses its first volume,<cite>RG I</cite>, available through
+    <a
+      href="https://rg-online.dhi-roma.it/denqRG/index.htm"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Repertorium Germanicum Online</a>.
+  </p>
+
+  <p>
+    RG contains regesta rather than complete transcriptions. These concise
+    scholarly summaries preserve essential information about people, places,
+    institutions, dates, and legal actions without reproducing the complete
+    wording of the original documents.
+  </p>
+
+
+  <!-- 2. Show a textual example -->
+  <h3>A Textual Example</h3>
+
+  <blockquote class="regest-example">
+    “<span class="person">Conrado dicto Schilher</span>
+    ecclesiam <span class="abbreviation">par.</span> in
+    <span class="place">Tronstat</span>
+    <span class="abbreviation">Herbip. dioc.</span>”
+  </blockquote>
+
+  <p>
+    This short extract contains a personal name, a place name, and several
+    abbreviations. It demonstrates the compressed and entity-dense character
+    of the regesta. Such features are common across the corpus: abbreviations
+    occur in 87.9% of all extracted segments. Historical and Latinized names,
+    abbreviated contexts, and compressed syntax all present potential
+    challenges for NER.
+  </p>
+
+
+  <!-- 3. Explain preprocessing -->
+  <h3>From XML to Workable Data</h3>
+
+  <p>
+    The XML was parsed into 9,434 individual text segments: 3,845 heads and
+    5,589 sublemmata belonging to 3,845 lemmas. XML markup for abbreviations,
+    dates, and source references was extracted into separate tables.
+  </p>
+
+  <p>
+    For the NER analysis, structured source references were removed, while
+    original spelling, punctuation, dates, and abbreviations were preserved.
+    Each head and sublemma was then stored as an individual row, producing a
+    consistent tabular dataset that could be processed by all three models.
+  </p>
+</section>
   
-  
-    </div>
-    <
-  <!-- ===== FIGURE: replace figure.png with your own image ===== -->
-  <section>
-    <h2>Result</h2>
-    <figure>
-      <img src="figure.png" alt="Describe your figure here, for screen readers and search">
-      <figcaption>Figure 1. One sentence saying what the figure shows.</figcaption>
-    </figure>
-  </section>
+
 
   <!-- ===== DATA: edit the rows, or replace the whole table ===== -->
   <section>
